@@ -1,17 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const streets = require("./routes/streets");
 
 const app = express();
 
-// ROUTES
-/**
- * @route GET
- * @desc Test Endpoint
- * @access Public
- */
-app.get("/", (req, res) => {
-    res.status(200).send("TESTING")
-})
+mongoose.connect('mongodb://localhost:27017/manord2d',
+    { useNewUrlParser: true }
+).then(
+    () => console.log("Connection Successful")).catch(err => console.log(err) );
+
+app.use("/streets", streets)
 
 // SERVER ACTIVATION
 const port = process.env.PORT || 5000;
