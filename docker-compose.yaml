@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+    d2d-mongo:
+        image: mongo:latest
+        ports:
+            - {target: 27017, published: 27017, protocol: tcp}
+    d2d-server:
+        build:
+            context: ./api
+            dockerfile: Dockerfile
+        ports:
+            - {target: 5000, published: 5000, protocol: tcp}
