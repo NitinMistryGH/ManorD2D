@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const getAllStreets = require("../db/streetsDb").getAllStreets;
+const {getAllStreets, populateStreetsTestData} = require("../db/streetsDb");
 
 /**
  * @route GET
@@ -19,5 +19,15 @@ router.get("/", (req, res) => {
 router.get("/all", async (req, res) => {
     res.status(200).send(await getAllStreets())
 });
+
+/**
+ * @route GET
+ * @desc Populate collection with test dataset
+ * @access Public
+ */
+router.get("/populate", async (req, res) => {
+    await populateStreetsTestData();
+    res.status(200).json({message: "Populated Database"})
+})
 
 module.exports = router;
