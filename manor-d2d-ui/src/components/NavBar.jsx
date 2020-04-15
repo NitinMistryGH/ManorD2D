@@ -1,12 +1,13 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button, Grid, IconButton } from "@material-ui/core";
+import { Menu } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 import { grey, red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles(theme => ({
   appBar: {
     backgroundColor: theme.palette.common.white,
-    padding: '1% 7% 0% 7%'
+    padding: "1.75% 7% 0% 7%"
   },
   buttonDiv: {
     justifyContent: "flex-end"
@@ -28,6 +29,9 @@ const useStyles = makeStyles(theme => ({
   appBarSubtitle: {
     color: grey[800]
   },
+  kebabIcon: {
+    color: theme.palette.common.black
+  }
 }));
 
 const NavBar = () => {
@@ -84,7 +88,13 @@ const NavBar = () => {
             </Button>
           </Grid>
           <Grid item xs={1} md={0}>
-            Menu
+            <IconButton
+              edge="start"
+              aria-label="menu"
+              className={styles.kebabIcon}
+            >
+              <Menu />
+            </IconButton>
           </Grid>
         </Grid>
       </Toolbar>
