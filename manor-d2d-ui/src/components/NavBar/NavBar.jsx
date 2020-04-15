@@ -34,27 +34,37 @@ const NavBar = () => {
   const styles = useStyles();
 
   return (
-    <AppBar position="static" className={styles.appBar}>
+    <AppBar id="navbar-component" position="static" className={styles.appBar}>
       <Toolbar>
         <Grid container>
-          <Grid item xs={3} md={3} alignContent="flex-end">
+          <Grid item xs={3} md={3}>
             <img
+              id="navbar-image"
               src="http://sankirtan.bhaktivedantamanor.co.uk/wp-content/uploads/2019/12/cropped-Website_Logo-1.jpg"
               alt="Sankirtana Forever Logo"
             />
           </Grid>
-          <Grid item xs={9} md={4} alignContent="flex-start">
+          <Grid item xs={9} md={4}>
             <div>
-              <Typography variant="h1" className={styles.appBarTitle}>
+              <Typography
+                id="navbar-site-title"
+                variant="h1"
+                className={styles.appBarTitle}
+              >
                 Sankirtana Forever
               </Typography>
-              <Typography variant="p" className={styles.appBarSubtitle}>
+              <Typography
+                id="navbar-site-subtitle"
+                variant="body1"
+                className={styles.appBarSubtitle}
+              >
                 Rise Above and Go Beyond [Marathon 2019]
               </Typography>
             </div>
           </Grid>
-          <Grid item xs={0} md={5} alignContent="flex-end">
+          <Grid item md={5}>
             <Button
+              id="navbar-button-home"
               className={styles.navButton}
               disableFocusRipple
               disableRipple
@@ -62,6 +72,7 @@ const NavBar = () => {
               Home
             </Button>
             <Button
+              id="navbar-button-campaign"
               className={styles.navButton}
               disableFocusRipple
               disableRipple
@@ -69,6 +80,7 @@ const NavBar = () => {
               Be A Giver Campaign
             </Button>
             <Button
+              id="navbar-button-photos"
               className={styles.navButton}
               disableFocusRipple
               disableRipple
@@ -76,6 +88,7 @@ const NavBar = () => {
               Photos
             </Button>
             <Button
+              id="navbar-button-videos"
               className={styles.navButton}
               disableFocusRipple
               disableRipple

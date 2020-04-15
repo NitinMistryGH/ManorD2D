@@ -1,7 +1,7 @@
 import React from 'react';
 import {ThemeProvider} from '@material-ui/core/styles'
 import theme from './theme/theme';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
