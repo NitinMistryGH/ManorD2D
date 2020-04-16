@@ -8,8 +8,11 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.common.white,
     padding: "1.75% 7% 1.5% 7%"
   },
-  buttonDiv: {
-    justifyContent: "flex-end"
+  buttonGrid: {
+    justifyContent: "flex-end",
+    [theme.breakpoints.down('md')]: {
+      display: 'none'
+    }
   },
   navButton: {
     fontWeight: 600,
@@ -27,6 +30,11 @@ const useStyles = makeStyles(theme => ({
   },
   appBarSubtitle: {
     color: grey[800]
+  },
+  imageGrid: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
   }
 }));
 
@@ -35,16 +43,16 @@ const NavBar = () => {
 
   return (
     <AppBar id="navbar-component" position="static" className={styles.appBar}>
-      <Toolbar>
+      <Toolbar disableGutters>
         <Grid container>
-          <Grid item xs={3} md={3}>
+          <Grid item sm={4} md={3} className={styles.imageGrid}>
             <img
               id="navbar-image"
               src="http://sankirtan.bhaktivedantamanor.co.uk/wp-content/uploads/2019/12/cropped-Website_Logo-1.jpg"
               alt="Sankirtana Forever Logo"
             />
           </Grid>
-          <Grid item xs={9} md={4}>
+          <Grid item xs={12} sm={8} md={4}>
             <div>
               <Typography
                 id="navbar-site-title"
@@ -62,7 +70,7 @@ const NavBar = () => {
               </Typography>
             </div>
           </Grid>
-          <Grid item md={5}>
+          <Grid item md={5} className={styles.buttonGrid}>
             <Button
               id="navbar-button-home"
               className={styles.navButton}
