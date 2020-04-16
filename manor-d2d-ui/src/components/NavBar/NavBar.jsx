@@ -5,58 +5,16 @@ import {
   Typography,
   Button,
   Grid,
-  IconButton,
+  IconButton
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
-import { makeStyles } from "@material-ui/core/styles";
-import { grey, red } from "@material-ui/core/colors";
 
-import NavBarDrawer from "./NavBarDrawer";
-
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    backgroundColor: theme.palette.common.white,
-    padding: "1.75% 7% 1.5% 7%",
-  },
-  buttonGrid: {
-    justifyContent: "flex-end",
-    [theme.breakpoints.down("md")]: {
-      display: "none",
-    },
-  },
-  navButton: {
-    fontWeight: 600,
-    fontSize: "0.875rem",
-    color: grey[900],
-    "&:hover": {
-      color: red[800],
-      backgroundColor: theme.palette.common.white,
-    },
-  },
-  appBarTitle: {
-    color: red[800],
-    fontSize: "1.875rem",
-    fontWeight: 500,
-  },
-  appBarSubtitle: {
-    color: grey[800],
-  },
-  imageGrid: {
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
-  drawerGrid: {
-    [theme.breakpoints.up("md")]: {
-      display: "none"
-    }
-  }
-}));
+import NavBarMenu from "./NavBarMenu";
+import useStyles from "./NavBarStyling";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const styles = useStyles();
-
   const navOptions = [
     { key: "Home", name: "Home" },
     { key: "Campaign", name: "Be A Giver Campaign" },
@@ -66,6 +24,10 @@ const NavBar = () => {
 
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+
+  const handleClose = (event) => {
+    setOpen(false);
   };
 
   return (
@@ -110,17 +72,31 @@ const NavBar = () => {
                 </Button>
               ))}
             </Grid>
-            <Grid item xs={1} sm={1} className={styles.drawerGrid}>
-              <IconButton onClick={toggleDrawer}>
+            <Grid item xs={1} sm={1} className={styles.menuGrid}>
+              <IconButton
+                edge="end"
+                onClick={toggleDrawer}
+                aria-haspopup="true"
+                aria-controls="navbar-menu"
+                className={styles.menuButton}
+              >
                 <Menu />
               </IconButton>
             </Grid>
           </Grid>
         </Toolbar>
       </AppBar>
-      <NavBarDrawer styles={styles} navOptions={navOptions} open={open} />
+        <NavBarMenu
+          styles={styles}
+          navOptions={navOptions}
+          open={open}
+          handleClose={handleClose}
+        />
     </div>
   );
 };
 
 export default NavBar;
+
+NavBar.defaultProps = {}
+NavBar.propTypes = {}
