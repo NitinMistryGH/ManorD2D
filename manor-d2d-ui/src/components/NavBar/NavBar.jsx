@@ -16,10 +16,10 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const styles = useStyles();
   const navOptions = [
-    { key: "Home", name: "Home" },
-    { key: "Campaign", name: "Be A Giver Campaign" },
-    { key: "Photos", name: "Photos" },
-    { key: "Videos", name: "Videos" },
+    { key: "home", name: "Home" },
+    { key: "campaign", name: "Be A Giver Campaign" },
+    { key: "photos", name: "Photos" },
+    { key: "videos", name: "Videos" }
   ];
 
   const toggleDrawer = () => {
@@ -63,7 +63,8 @@ const NavBar = () => {
             <Grid item md={5} className={styles.buttonGrid}>
               {navOptions.map((item) => (
                 <Button
-                  id={`navbar-button-{item.key}`}
+                  id={`navbar-button-${item.key}`}
+                  key={`navbar-button-${item.key}`}
                   className={styles.navButton}
                   disableFocusRipple
                   disableRipple
@@ -74,6 +75,7 @@ const NavBar = () => {
             </Grid>
             <Grid item xs={1} sm={1} className={styles.menuGrid}>
               <IconButton
+                id="navbar-menu-button"
                 edge="end"
                 onClick={toggleDrawer}
                 aria-haspopup="true"

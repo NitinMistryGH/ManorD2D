@@ -8,8 +8,8 @@ const NavBarMenu = ({ styles, navOptions, open, handleClose }) => (
       <MenuList id="navbar-menu" className={styles.menu}>
         {navOptions.map((item) => (
           <MenuItem
-            id={`navbar-menu-{item.key}`}
-            key={`navbar-menu-{item.key}`}
+            id={`navbar-menu-${item.key}`}
+            key={`navbar-menu-${item.key}`}
             onClick={handleClose}
             className={styles.menuItem}
           >
