@@ -29,9 +29,17 @@ const Footer = () => {
 
   return (
     <Slide direction="up" in={scrollTrigger} id="footer-slide">
-      <AppBar position="absolute" className={styles.footer} id="footer-component">
+      <AppBar
+        position="absolute"
+        className={styles.footer}
+        id="footer-component"
+      >
         <Toolbar className={styles.content}>
-          <Typography variant="body1" id="footer-text" data-testid="footer-text">
+          <Typography
+            variant="body1"
+            id="footer-text"
+            data-testid="footer-text"
+          >
             | Founder Acharya: A.C. Bhaktivedanta Swami Prabhupada |
           </Typography>
         </Toolbar>
