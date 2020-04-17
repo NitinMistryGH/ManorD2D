@@ -28,10 +28,10 @@ const Footer = () => {
   const scrollTrigger = useScrollTrigger();
 
   return (
-    <Slide direction="up" in={scrollTrigger} mountOnEnter unmountOnExit>
-      <AppBar position="absolute" color="" className={styles.footer}>
+    <Slide direction="up" in={scrollTrigger} id="footer-slide">
+      <AppBar position="absolute" className={styles.footer} id="footer-component">
         <Toolbar className={styles.content}>
-          <Typography variant="body1">
+          <Typography variant="body1" id="footer-text" data-testid="footer-text">
             | Founder Acharya: A.C. Bhaktivedanta Swami Prabhupada |
           </Typography>
         </Toolbar>

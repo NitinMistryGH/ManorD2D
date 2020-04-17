@@ -10,7 +10,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <h1 style={{height: '110vh'}}>Hello</h1>
       <Footer />
     </ ThemeProvider>
   );
