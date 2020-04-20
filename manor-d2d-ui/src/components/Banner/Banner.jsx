@@ -40,7 +40,12 @@ const Banner = ({ currentPage }) => {
           </Grid>
           <Grid item md={3}>
             <Breadcrumbs id="banner-breadcrumbs" aria-label="breadcrumb">
-              <Link id="banner-breadcrumbs-home" href="/" className={styles.links} underline="none">
+              <Link
+                id="banner-breadcrumbs-home"
+                href="/"
+                className={styles.links}
+                underline="none"
+              >
                 Home
               </Link>
               <Link
