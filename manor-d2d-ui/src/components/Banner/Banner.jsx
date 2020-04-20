@@ -30,20 +30,21 @@ const Banner = ({ currentPage }) => {
   const styles = useStyles();
 
   return (
-    <AppBar position="relative" className={styles.appBar}>
+    <AppBar id="banner-component" position="relative" className={styles.appBar}>
       <Toolbar disableGutters>
         <Grid container>
           <Grid item md={9}>
-            <Typography variant="h1" className={styles.title}>
+            <Typography id="banner-title" variant="h1" className={styles.title}>
               {currentPage.title}
             </Typography>
           </Grid>
           <Grid item md={3}>
-            <Breadcrumbs aria-label="breadcrumb">
-              <Link href="/" className={styles.links} underline="none">
+            <Breadcrumbs id="banner-breadcrumbs" aria-label="breadcrumb">
+              <Link id="banner-breadcrumbs-home" href="/" className={styles.links} underline="none">
                 Home
               </Link>
               <Link
+                id="banner-breadcrumbs-page"
                 href={currentPage.link}
                 className={styles.links}
                 aria-current="page"

@@ -13,4 +13,9 @@ describe("renders App Components", () => {
     expect(document.getElementById("navbar-component")).toBeDefined();
 
   });
+  test("renders banner", () => {
+    render(<App />);
+    expect(document.getElementById("banner-component")).toBeDefined();
+
+  });
 });
