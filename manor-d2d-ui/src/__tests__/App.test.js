@@ -13,4 +13,10 @@ describe("renders App Components", () => {
     expect(document.getElementById("navbar-component")).toBeDefined();
 
   });
+
+  test("renders page wrapper", () => {
+    render(<App />);
+    expect(document.getElementById("page-wrapper-component")).toBeDefined();
+
+  });
 });
