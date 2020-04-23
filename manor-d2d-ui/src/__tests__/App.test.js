@@ -15,4 +15,10 @@ describe("renders App Components", () => {
     render(<App />);
     expect(document.getElementById("banner-component")).toBeDefined();
   });
+
+  test("renders page wrapper", () => {
+    render(<App />);
+    expect(document.getElementById("page-wrapper-component")).toBeDefined();
+
+  });
 });

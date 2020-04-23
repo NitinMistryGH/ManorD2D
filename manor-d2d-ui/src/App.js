@@ -7,6 +7,7 @@ import theme from './theme/theme';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
+import PageWrapper from "./components/PageWrapper/PageWrapper";
 
 
 const App = () => {
@@ -15,8 +16,11 @@ const App = () => {
       <CssBaseline />
       <NavBar />
       <Banner currentPage={{title: "Database of Streets Visited", link: "/", breadcrumb: "Sankirtana Forever"}}/>
+      <PageWrapper>
+        <h1>Content</h1>
+      </PageWrapper>
       <Footer />
-    </ ThemeProvider>
+    </ThemeProvider>
   );
 }
 
