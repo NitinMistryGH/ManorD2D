@@ -25,7 +25,12 @@ const PageWrapper = ({ routes }) => {
       disableGutters
     >
       {routes.map((route) => (
-        <Route path={route.link} component={route.component} exact />
+        <Route
+          key={route.key}
+          path={route.link}
+          component={route.component}
+          exact
+        />
       ))}
     </Container>
   );

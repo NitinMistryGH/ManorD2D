@@ -4,7 +4,6 @@ import {
   Toolbar,
   Typography,
   Breadcrumbs,
-  Link,
   Grid,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Banner = ({ currentPage, routes }) => {
+const Banner = ({ routes }) => {
   const styles = useStyles();
 
   return (
@@ -47,6 +46,7 @@ const Banner = ({ currentPage, routes }) => {
                       const to = `/${pathnames.slice(0, index + 1).join("/")}`;
                       return (
                         <Typography
+                          key="banner-title"
                           id="banner-title"
                           variant="h1"
                           className={styles.title}
@@ -57,6 +57,7 @@ const Banner = ({ currentPage, routes }) => {
                     })
                   ) : (
                     <Typography
+                      key="banner-title"
                       id="banner-title"
                       variant="h1"
                       className={styles.title}
@@ -69,6 +70,7 @@ const Banner = ({ currentPage, routes }) => {
                   <Breadcrumbs id="banner-breadcrumbs" aria-label="breadcrumb">
                     <LinkRouter
                       id="banner-breadcrumbs-home"
+                      key="banner-breadcrumbs-home"
                       to="/"
                       className={styles.links}
                       underline="none"
@@ -122,5 +124,5 @@ export default Banner;
 
 Banner.defaultProps = {};
 Banner.propTypes = {
-  currentPage: PropTypes.instanceOf(Object).isRequired,
+  routes: PropTypes.instanceOf(Array).isRequired
 };

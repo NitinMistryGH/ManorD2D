@@ -52,6 +52,7 @@ const useStyles = makeStyles(theme => ({
     },
     menuItem: {
         color: theme.palette.common.white,
+        textDecoration: 'none',
         '&:hover': {
             fontWeight: 'bold'
         }

@@ -9,23 +9,14 @@ import {
   IconButton,
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
+import PropTypes from "prop-types";
 
 import NavBarMenu from "./NavBarMenu";
 import useStyles from "./NavBarStyling";
 
-const NavBar = () => {
+const NavBar = ({routes}) => {
   const [open, setOpen] = useState(false);
   const styles = useStyles();
-  const navOptions = [
-    { key: "home", name: "Home", link: "/" },
-    {
-      key: "campaign",
-      name: "Be A Giver Campaign",
-      link: "/be-a-giver-campaign",
-    },
-    { key: "photos", name: "Photos", link: "/photos" },
-    { key: "videos", name: "Videos", link: "/videos" },
-  ];
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -67,16 +58,15 @@ const NavBar = () => {
               </div>
             </Grid>
             <Grid item md={5} className={styles.buttonGrid}>
-              {navOptions.map((item) => (
-                <Link to={item.link}>
+              {routes.map((item) => (
+                <Link to={item.link} key={`navbar-button-${item.key}`}>
                   <Button
                     id={`navbar-button-${item.key}`}
-                    key={`navbar-button-${item.key}`}
                     className={styles.navButton}
                     disableFocusRipple
                     disableRipple
                   >
-                    {item.name}
+                    {item.key === "home" ? "Home" : item.title}
                   </Button>
                 </Link>
               ))}
@@ -98,7 +88,7 @@ const NavBar = () => {
       </AppBar>
       <NavBarMenu
         styles={styles}
-        navOptions={navOptions}
+        navOptions={routes}
         open={open}
         handleClose={handleClose}
       />
@@ -109,4 +99,6 @@ const NavBar = () => {
 export default NavBar;
 
 NavBar.defaultProps = {};
-NavBar.propTypes = {};
+NavBar.propTypes = {
+  routes: PropTypes.instanceOf(Array).isRequired
+};
