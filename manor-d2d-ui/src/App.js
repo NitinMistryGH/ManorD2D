@@ -8,6 +8,7 @@ import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
 import PageWrapper from "./components/PageWrapper/PageWrapper";
+import BeAGiver from './components/BeAGiver/BeAGiver';
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
       <NavBar />
       <Banner currentPage={{title: "Database of Streets Visited", link: "/", breadcrumb: "Sankirtana Forever"}}/>
       <PageWrapper>
-        <h1>Content</h1>
+        <BeAGiver />
       </PageWrapper>
       <Footer />
     </ThemeProvider>
