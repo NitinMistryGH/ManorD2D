@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import NavBarMenu from '../components/NavBar/NavBarMenu';
+import { BrowserRouter as Router } from 'react-router-dom';
+import {routes} from '../__test-constants__/objectTestConstants';
 
 const styles = {
     menu: 'string',
@@ -11,35 +13,65 @@ const handleClose = () => {
     console.log('do stuff');
 };
 
-const navOptions = [
-    { key: 'option1', name: 'Option 1' },
-    { key: 'option2', name: 'Option 2' }
-];
 describe('NavBar Menu Renders Correctly', () => {
-    test('option 1', () => {
+    test('Database of Streets', () => {
         render(
-            <NavBarMenu
-                styles={styles}
-                open
-                navOptions={navOptions}
-                handleClose={handleClose}
-            />
+            <Router>
+                <NavBarMenu
+                    styles={styles}
+                    open
+                    navOptions={routes}
+                    handleClose={handleClose}
+                />
+            </Router>
         );
-        expect(document.getElementById('navbar-menu-option1').textContent).toBe(
-            'Option 1'
+        expect(document.getElementById('navbar-menu-home').textContent).toBe(
+            'Home'
         );
     });
-    test('option 2', () => {
+    test('Be A Giver', () => {
         render(
-            <NavBarMenu
-                styles={styles}
-                open
-                navOptions={navOptions}
-                handleClose={handleClose}
-            />
+            <Router>
+                <NavBarMenu
+                    styles={styles}
+                    open
+                    navOptions={routes}
+                    handleClose={handleClose}
+                />
+            </Router>
         );
-        expect(document.getElementById('navbar-menu-option2').textContent).toBe(
-            'Option 2'
+        expect(document.getElementById('navbar-menu-campaign').textContent).toBe(
+            'Be A Giver Campaign'
+        );
+    });
+    test('Photos', () => {
+        render(
+            <Router>
+                <NavBarMenu
+                    styles={styles}
+                    open
+                    navOptions={routes}
+                    handleClose={handleClose}
+                />
+            </Router>
+        );
+        expect(document.getElementById('navbar-menu-photos').textContent).toBe(
+            'Photos'
+        );
+    });
+    test('Videos', () => {
+        render(
+            <Router>
+                <NavBarMenu
+                    styles={styles}
+                    open
+                    navOptions={routes}
+                    handleClose={handleClose}
+                />
+            </Router>
+        );
+        expect(document.getElementById('navbar-menu-videos').textContent).toBe(
+            'Videos'
         );
     });
 });

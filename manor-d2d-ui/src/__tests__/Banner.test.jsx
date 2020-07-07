@@ -1,48 +1,39 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Banner from '../components/Banner/Banner';
+import { routes } from '../__test-constants__/objectTestConstants';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('Banner renders correctly', () => {
     test('title', () => {
         render(
-            <Banner
-                currentPage={{ title: 'Page Title', link: '/', breadcrumb: 'page' }}
-            />
+            <Router>
+                <Banner routes={routes} />
+            </Router>
         );
         expect(document.getElementById('banner-title').textContent).toBe(
-            'Page Title'
+            'Database of Streets Visited'
         );
     });
     test('breadcrumbs Home', () => {
         render(
-            <Banner
-                currentPage={{ title: 'Page Title', link: '/', breadcrumb: 'page' }}
-            />
+            <Router>
+                <Banner routes={routes} />
+            </Router>
         );
         expect(document.getElementById('banner-breadcrumbs-home').textContent).toBe(
             'Home'
         );
     });
 
-    test('breadcrumbs Page', () => {
-        render(
-            <Banner
-                currentPage={{ title: 'Page Title', link: '/', breadcrumb: 'page' }}
-            />
-        );
-        expect(document.getElementById('banner-breadcrumbs-page').textContent).toBe(
-            'page'
-        );
-    });
-
     test('breadcrumbs', () => {
         render(
-            <Banner
-                currentPage={{ title: 'Page Title', link: '/', breadcrumb: 'page' }}
-            />
+            <Router>
+                <Banner routes={routes} />
+            </Router>
         );
         expect(document.getElementById('banner-breadcrumbs').textContent).toBe(
-            'Home/page'
+            'Home/Sankirtana Forever'
         );
     });
 });
