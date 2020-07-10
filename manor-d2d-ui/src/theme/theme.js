@@ -1,12 +1,12 @@
-import {createMuiTheme} from '@material-ui/core/styles';
-import {red, grey} from '@material-ui/core/colors';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { red, grey } from '@material-ui/core/colors';
 
 const theme = createMuiTheme({
     palette: {
         primary: red,
         background: {
-            default: grey[200],
-          },
+            default: grey[200]
+        },
         typography: {
             fontFamily: [
                 '-apple-system',
@@ -20,7 +20,7 @@ const theme = createMuiTheme({
                 'Cantarell',
                 '"Fira Sans"',
                 '"Droid Sans"'
-              ].join(',')
+            ].join(',')
         }
     }
 });
