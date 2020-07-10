@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Banner from '../components/Banner/Banner';
 import { routes } from '../__test-constants__/objectTestConstants';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('Banner renders correctly', () => {
     test('title', () => {
