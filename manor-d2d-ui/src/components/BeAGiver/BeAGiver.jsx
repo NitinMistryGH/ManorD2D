@@ -33,9 +33,9 @@ const BeAGiver = () => {
                 width="200"
                 height="113"
                 src="https://www.youtube.com/embed/VU2k4X1hsI4"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen />
+                allowFullScreen />
         </div>
     )
 };
