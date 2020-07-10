@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Home from './components/Home/Home';
+import Photo from './components/Photo/Photo';
 
 const App = () => {
     const routes = [
@@ -32,7 +33,7 @@ const App = () => {
             title: 'Photos',
             link: '/photos',
             breadcrumb: 'Photos',
-            component: Home
+            component: Photo
         },
         {
             key: 'videos',
