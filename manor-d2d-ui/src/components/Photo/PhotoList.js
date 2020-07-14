@@ -58,7 +58,7 @@ export const PhotoList = [
     {
         image: 'http://sankirtan.bhaktivedantamanor.co.uk/wp-content/uploads/2018/12/Marathon_17.jpg',
         title: 'Marathon 17'
-    },    {
+    }, {
         image: 'http://sankirtan.bhaktivedantamanor.co.uk/wp-content/uploads/2018/12/Marathon_18.jpg',
         title: 'Marathon 18'
     },
@@ -99,4 +99,4 @@ export const PhotoList = [
         title: 'Marathon 27'
     }
 
-]
+];

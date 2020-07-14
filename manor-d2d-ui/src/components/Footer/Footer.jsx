@@ -39,7 +39,7 @@ const Footer = () => {
                     data-testid='footer-text'
                 >
                     | Founder Acharya: A.C. Bhaktivedanta Swami Prabhupada |
-                    </Typography>
+                </Typography>
             </Toolbar>
         </AppBar>
     );

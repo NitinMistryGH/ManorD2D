@@ -1,17 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import NavBarMenu from '../components/NavBar/NavBarMenu';
 import { BrowserRouter as Router } from 'react-router-dom';
-import {routes} from '../__test-constants__/objectTestConstants';
+import NavBarMenu from '../components/NavBar/NavBarMenu';
+import { routes } from '../__test-constants__/objectTestConstants';
 
 const styles = {
     menu: 'string',
     menuItem: 'string'
 };
 
-const handleClose = () => {
-    console.log('do stuff');
-};
+const handleClose = () => {};
 
 describe('NavBar Menu Renders Correctly', () => {
     test('Database of Streets', () => {

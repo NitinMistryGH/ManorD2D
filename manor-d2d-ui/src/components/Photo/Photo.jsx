@@ -7,7 +7,7 @@ import {
 import { PhotoList } from './PhotoList';
 import PhotoCard from './PhotoCard';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
     photo: {
         width: 150,
         height: 150,
@@ -19,17 +19,16 @@ const useStyles = makeStyles(theme => ({
     grid: {
         justifyContent: 'center'
     }
-}))
+}));
 
-
-const Photo = ({ }) => {
+const Photo = () => {
     const styles = useStyles();
 
     return (
-        <Grid container spacing={8} className={styles.grid}>
+        <Grid container spacing={8} className={styles.grid} id='photo-grid-container'>
             {
                 PhotoList.map(photo => (
-                    <Grid item >
+                    <Grid item>
                         <PhotoCard
                             id={`photo-${photo.title}`}
                             key={`photo-${photo.title}`}
@@ -40,8 +39,10 @@ const Photo = ({ }) => {
                 ))
             }
         </Grid>
-    )
-
-}
+    );
+};
 
 export default Photo;
+
+Photo.defaultProps = {};
+Photo.propTypes = {};
