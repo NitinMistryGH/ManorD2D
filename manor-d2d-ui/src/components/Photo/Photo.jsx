@@ -15,6 +15,9 @@ const useStyles = makeStyles(theme => ({
     },
     card: {
         width: 'calc(150px + 10%)'
+    },
+    grid: {
+        justifyContent: 'center'
     }
 }))
 
@@ -23,7 +26,7 @@ const Photo = ({ }) => {
     const styles = useStyles();
 
     return (
-        <Grid container spacing={8}>
+        <Grid container spacing={8} className={styles.grid}>
             {
                 PhotoList.map(photo => (
                     <Grid item >
