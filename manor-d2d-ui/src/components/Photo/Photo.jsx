@@ -23,7 +23,7 @@ const Photo = ({ }) => {
     const styles = useStyles();
 
     return (
-        <Grid container spacing={7}>
+        <Grid container spacing={8}>
             {
                 PhotoList.map(photo => (
                     <Grid item >
