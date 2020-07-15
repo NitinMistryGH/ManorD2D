@@ -28,10 +28,9 @@ const Photo = () => {
         <Grid container spacing={8} className={styles.grid} id='photo-grid-container'>
             {
                 PhotoList.map(photo => (
-                    <Grid item>
+                    <Grid item key={`photo-${photo.title}`}>
                         <PhotoCard
                             id={`photo-${photo.title}`}
-                            key={`photo-${photo.title}`}
                             photo={photo}
                             styles={styles}
                         />
