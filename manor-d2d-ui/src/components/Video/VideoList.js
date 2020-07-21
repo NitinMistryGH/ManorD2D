@@ -1,4 +1,4 @@
-const VideoList = [
+export const VideoList = [
     {
         id: 'manor',
         title: 'Bhaktivedanta Manor',
@@ -11,7 +11,7 @@ const VideoList = [
         subtitle: 'Book Marathon 2019',
         link: 'IhBFA-Weijs'
     },
-        {
+    {
         id: 'vrindavan-chandra',
         title: 'HG Vrindavan Chandra Das',
         subtitle: 'Book Marathon 2019',
@@ -29,6 +29,4 @@ const VideoList = [
         subtitle: 'Book Marathon',
         link: 'XvmXT-wnUEk'
     }
-]
-
-export {VideoList};
+];

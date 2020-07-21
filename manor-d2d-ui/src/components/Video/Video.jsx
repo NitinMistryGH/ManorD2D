@@ -5,7 +5,8 @@ import {
 } from '@material-ui/core';
 import { VideoList } from './VideoList';
 import VideoCard from './VideoCard';
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(() => ({
     card: {
         display: 'flex',
         justifyContent: 'center',
@@ -16,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column'
     },
     content: {
-        flex: "1 0 auto"
+        flex: '1 0 auto'
     },
     controls: {
-        display: "flex",
-        alignItems: "center",
+        display: 'flex',
+        alignItems: 'center',
         justifyContent: 'center'
     },
     icon: {
@@ -30,16 +31,19 @@ const useStyles = makeStyles((theme) => ({
     gridItem: {
         width: '50%'
     }
-}))
+}));
 const Video = () => {
     const styles = useStyles();
     return (
-        <Grid container className={styles.grid} id='video-grid-container'>
+        <Grid container className={styles.grid} id='video-component'>
             {
                 VideoList.map(video => (
-                    <Grid unit key={`video-${video.id}`} className={styles.gridItem}>
+                    <Grid
+                        unit
+                        id={`video-${video.id}`}
+                        key={`video-${video.id}`}
+                        className={styles.gridItem}>
                         <VideoCard
-                            key={`video-${video.id}`}
                             styles={styles}
                             video={video}
                         />
@@ -47,7 +51,10 @@ const Video = () => {
                 ))
             }
         </Grid>
-    )
-}
+    );
+};
 
 export default Video;
+
+Video.defaultProps = {};
+Video.propTypes = {};
