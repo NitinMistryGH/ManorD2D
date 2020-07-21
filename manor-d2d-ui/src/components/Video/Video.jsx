@@ -8,7 +8,8 @@ import VideoCard from './VideoCard';
 const useStyles = makeStyles((theme) => ({
     card: {
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        margin: '3%'
     },
     details: {
         display: 'flex',
@@ -25,24 +26,27 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         height: 38,
         width: 38
+    },
+    gridItem: {
+        width: '50%'
     }
 }))
 const Video = () => {
     const styles = useStyles();
     return (
-        <Grid container spacing={5} id='video-grid-container'>
+        <Grid container className={styles.grid} id='video-grid-container'>
             {
                 VideoList.map(video => (
-                    <Grid unit key={`video-${video.id}`}>
-                    <VideoCard
-                        key={`video-${video.id}`}
-                        styles={styles}
-                        video={video}
-                    />
+                    <Grid unit key={`video-${video.id}`} className={styles.gridItem}>
+                        <VideoCard
+                            key={`video-${video.id}`}
+                            styles={styles}
+                            video={video}
+                        />
                     </Grid>
                 ))
             }
-</Grid>
+        </Grid>
     )
 }
 
