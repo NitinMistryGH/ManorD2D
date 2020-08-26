@@ -9,12 +9,15 @@ const getAllStreets = () =>
     .lean()
     .exec();
 
-const populateStreetsTestData = () =>
-  mongoose
+const populateStreetsTestData = async () => {
+  await mongoose
     .model("streets", streetsSchema)
-    .remove({})
-    .insertMany(testData)
-    .exec();
+    .remove({});
+
+  return mongoose
+    .model("streets", streetsSchema)
+    .insertMany(testData);
+}
 
 module.exports = {
   getAllStreets,

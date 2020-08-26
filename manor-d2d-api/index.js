@@ -4,7 +4,7 @@ const streets = require("./routes/streets");
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/manorD2D',
+mongoose.connect('mongodb://d2d-mongo:27017/manorD2D',
     { useNewUrlParser: true }
 ).then(
     () => console.log("Connection Successful")).catch(err => console.log(err) );
