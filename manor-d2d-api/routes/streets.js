@@ -8,6 +8,7 @@ const {getAllStreets, populateStreetsTestData} = require("../db/streetsDb");
  * @access Public
  */
 router.get("/", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).send("TESTING")
 });
 
@@ -17,6 +18,7 @@ router.get("/", (req, res) => {
  * @access Public
  */
 router.get("/all", async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).send(await getAllStreets())
 });
 
@@ -26,6 +28,7 @@ router.get("/all", async (req, res) => {
  * @access Public
  */
 router.get("/populate", async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     await populateStreetsTestData();
     res.status(200).json({message: "Populated Database"})
 })
