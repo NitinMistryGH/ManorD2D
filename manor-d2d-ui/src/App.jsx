@@ -11,6 +11,7 @@ import Banner from './components/Banner/Banner';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Home from './components/Home/Home';
 import Video from './components/Video/Video';
+import BeAGiver from './components/BeAGiver/BeAGiver';
 
 const App = () => {
     const routes = [
@@ -26,7 +27,7 @@ const App = () => {
             title: 'Be A Giver Campaign',
             link: '/be-a-giver-campaign',
             breadcrumb: 'Be A Giver Campaign',
-            component: Home
+            component: BeAGiver
         },
         {
             key: 'photos',
