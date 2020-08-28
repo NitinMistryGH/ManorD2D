@@ -11,7 +11,6 @@ const apiRequest = (request) => axios.request({
 function* fetchStreets() {
     try {
         const streets = yield call(() => apiRequest(GET_STREETS_API));
-        console.log(streets)
         yield put({ type: GET_STREETS_SUCCESS, response: streets.data });
     } catch (error) {
         console.log(error.status)

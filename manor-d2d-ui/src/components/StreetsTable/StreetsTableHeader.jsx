@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 
 
-const TableHeader = ({ styles, order, orderBy, onRequestSort }) => {
+const StreetsTableHeader = ({ styles, order, orderBy, onRequestSort }) => {
 
     const createSortHandler = property => event => {
         onRequestSort(event, property);
@@ -26,8 +26,8 @@ const TableHeader = ({ styles, order, orderBy, onRequestSort }) => {
                 {headers.map(headerCell => (
                     <TableCell
                         key={headerCell.id}
-                        align={headCell.numeric ? 'right' : 'left'}
-                        padding={headCell.disablePadding ? 'none' : 'default'}
+                        align={headerCell.numeric ? 'right' : 'left'}
+                        padding={headerCell.disablePadding ? 'none' : 'default'}
                         sortDirection={orderBy === headerCell.id ? order : false}
                     >
                         <TableSortLabel
@@ -36,11 +36,6 @@ const TableHeader = ({ styles, order, orderBy, onRequestSort }) => {
                             onClick={createSortHandler(headerCell.id)}
                         >
                             {headerCell.label}
-                            {orderBy === headerCell.id ? (
-                                <span className={classes.visuallyHidden}>
-                                    {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                                </span>
-                            ) : null}
                         </TableSortLabel>
                     </TableCell>
                 ))}
@@ -49,13 +44,13 @@ const TableHeader = ({ styles, order, orderBy, onRequestSort }) => {
     )
 }
 
-export default TableHeader;
+export default StreetsTableHeader;
 
-TableHeader.defaultProps = {};
+StreetsTableHeader.defaultProps = {};
 
-TableHeader.propTypes = {
-    styles = PropTypes.instanceOf(Object).isRequired,
-    onRequestSort = PropTypes.func.isRequired,
-    order = PropTypes.oneOf(['asc', 'desc']).isRequired,
+StreetsTableHeader.propTypes = {
+    styles: PropTypes.instanceOf(Object).isRequired,
+    onRequestSort: PropTypes.func.isRequired,
+    order: PropTypes.oneOf(['asc', 'desc']).isRequired,
     orderBy: PropTypes.string.isRequired
 }

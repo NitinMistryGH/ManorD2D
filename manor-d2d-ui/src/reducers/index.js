@@ -6,9 +6,9 @@ const streets = (state = {}, action) => {
         case GET_STREETS:
             return { ...state, loading: true };
         case GET_STREETS_SUCCESS:
-            return { ...state, streets: action.response, loading: false }
+            return { ...state, data: action.response, loading: false }
         case GET_STREETS_ERROR:
-            return {...state, streets_error: action.error, loading: false}
+            return {...state, error: action.error, loading: false}
         default:
             return state;
     }
@@ -19,9 +19,9 @@ const db = (state = {}, action) => {
         case POPULATE_DB:
             return { ...state, loading: true };
         case POPULATE_DB_SUCCESS:
-            return { ...state, db: action.response, loading: false };
+            return { ...state, data: action.response, loading: false };
         case POPULATE_DB_ERROR:
-            return {...state, db_error: action.error, loading: false}
+            return {...state, error: action.error, loading: false}
         default:
             return state;
     }

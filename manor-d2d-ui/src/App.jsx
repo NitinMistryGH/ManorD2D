@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Home from './components/Home/Home';
+import StreetsTable from './components/StreetsTable/StreetsTable';
 import { populateDb, getStreets } from './actions';
 
 
@@ -53,7 +54,7 @@ const routes = [
 class App extends Component {
 
     componentDidMount() {
-       this.props.populateDb();
+        //this.props.populateDb();
         this.props.getStreets();
     }
 
