@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Home from './components/Home/Home';
+import Video from './components/Video/Video';
 import BeAGiver from './components/BeAGiver/BeAGiver';
 
 const App = () => {
@@ -40,7 +41,7 @@ const App = () => {
             title: 'Videos',
             link: '/videos',
             breadcrumb: 'Videos',
-            component: Home
+            component: Video
         }
     ];
     return (
