@@ -68,4 +68,11 @@ export default StreetsTableBody;
 StreetsTableBody.defaultProps = {};
 
 StreetsTableBody.propTypes = {
+    styles: PropTypes.instanceOf(Object).isRequired,
+    order: PropTypes.oneOf(['asc', 'desc']).isRequired,
+    orderBy: PropTypes.string.isRequired,
+    rowsPerPage: PropTypes.number.isRequired,
+    streets: PropTypes.instanceOf(Object).isRequired,
+    page: PropTypes.number.isRequired,
+    emptyRows: PropTypes.number.isRequired
 }

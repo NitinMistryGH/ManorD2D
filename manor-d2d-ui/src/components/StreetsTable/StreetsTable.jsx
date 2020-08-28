@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { TableContainer, Table, Paper, TablePagination } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import StreetsTableBody from './StreetsTableBody';
 import StreetsTableHeader from './StreetsTableHeader';
-import { connect } from 'react-redux';
+
 
 const mapStateToProps = state => ({
     streets: state.streets.data
@@ -72,3 +75,8 @@ const StreetsTable = ({ streets }) => {
 }
 
 export default connect(mapStateToProps)(StreetsTable);
+
+StreetsTable.defaultProps = {};
+StreetsTable.propTypes = {
+    streets: PropTypes.instanceOf(Object).isRequired
+};

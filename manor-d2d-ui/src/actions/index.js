@@ -1,13 +1,8 @@
-import { POPULATE_DB, GET_STREETS} from "./action-types";
-
-const populateDb = () => ({
-    type: POPULATE_DB
-});
+import { GET_STREETS } from "./action-types";
 
 const getStreets = () => ({
     type: GET_STREETS
 });
 export {
-    populateDb,
     getStreets
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, Component } from 'react';
+import React, { useEffect } from 'react';
 import { Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -14,11 +14,9 @@ import Home from './components/Home/Home';
 import Photo from './components/Photo/Photo';
 import Video from './components/Video/Video';
 import BeAGiver from './components/BeAGiver/BeAGiver';
-import { populateDb, getStreets } from './actions';
-
+import { getStreets } from './actions';
 
 const mapDispatchToProps = {
-    populateDb: populateDb,
     getStreets: getStreets
 };
 
@@ -53,26 +51,22 @@ const routes = [
     }
 ];
 
-class App extends Component {
+const App = ({getStreets}) => {
 
-    componentDidMount() {
-        //this.props.populateDb();
-        this.props.getStreets();
-    }
+    useEffect(() => getStreets());
 
-    render() {
-        return (
-            <Switch>
-                <ThemeProvider theme={theme}>
-                    <CssBaseline />
-                    <NavBar routes={routes} />
-                    <Banner routes={routes} />
-                    <PageWrapper routes={routes} />
-                    <Footer />
-                </ThemeProvider>
-            </Switch >
-        );
-    }
+    return (
+        <Switch>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <NavBar routes={routes} />
+                <Banner routes={routes} />
+                <PageWrapper routes={routes} />
+                <Footer />
+            </ThemeProvider>
+        </Switch >
+    );
+
 };
 
 export default connect(null, mapDispatchToProps)(App);

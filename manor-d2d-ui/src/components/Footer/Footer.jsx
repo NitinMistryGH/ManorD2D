@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         color: theme.palette.common.white,
         top: 'auto',
         bottom: 0,
-        position: 'inherit'
+        position: 'fixed'
     },
     content: {
         justifyContent: 'center'
