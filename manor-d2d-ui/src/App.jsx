@@ -11,7 +11,9 @@ import Footer from './components/Footer/Footer';
 import Banner from './components/Banner/Banner';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Home from './components/Home/Home';
-import StreetsTable from './components/StreetsTable/StreetsTable';
+import Photo from './components/Photo/Photo';
+import Video from './components/Video/Video';
+import BeAGiver from './components/BeAGiver/BeAGiver';
 import { populateDb, getStreets } from './actions';
 
 
@@ -33,21 +35,21 @@ const routes = [
         title: 'Be A Giver Campaign',
         link: '/be-a-giver-campaign',
         breadcrumb: 'Be A Giver Campaign',
-        component: Home
+        component: BeAGiver
     },
     {
         key: 'photos',
         title: 'Photos',
         link: '/photos',
         breadcrumb: 'Photos',
-        component: Home
+        component: Photo
     },
     {
         key: 'videos',
         title: 'Videos',
         link: '/videos',
         breadcrumb: 'Videos',
-        component: Home
+        component: Video
     }
 ];
 

@@ -10,7 +10,8 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: theme.palette.common.white,
         marginTop: '8%',
         padding: '3.5% 1.5% 3%',
-        border: `1px solid ${grey[300]}`
+        border: `1px solid ${grey[300]}`,
+        marginBottom: '8%'
     }
 }));
 
