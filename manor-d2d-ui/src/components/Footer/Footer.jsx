@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
         top: 'auto',
         bottom: 0,
         position: 'inherit'
+        position: 'fixed'
     },
     content: {
         justifyContent: 'center'
@@ -42,6 +43,7 @@ const Footer = () => {
                 </Typography>
             </Toolbar>
         </AppBar>
+
     );
 };
 

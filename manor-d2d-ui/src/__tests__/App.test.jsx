@@ -37,4 +37,13 @@ describe('renders App Components', () => {
         );
         expect(document.getElementById('page-wrapper-component')).toBeDefined();
     });
+
+    test('renders video coponent', () => {
+        render(
+            <Router>
+                <App />
+            </Router>
+        );
+        expect(document.getElementById('video-component')).toBeDefined();
+    });
 });
