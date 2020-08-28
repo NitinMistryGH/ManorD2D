@@ -9,9 +9,7 @@ const styles = {
     menuItem: 'string'
 };
 
-const handleClose = () => {
-    console.log('do stuff');
-};
+const handleClose = () => {};
 
 describe('NavBar Menu Renders Correctly', () => {
     test('Database of Streets', () => {

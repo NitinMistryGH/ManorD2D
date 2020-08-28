@@ -3,9 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
     AppBar,
     Toolbar,
-    Typography,
-    useScrollTrigger,
-    Slide
+    Typography
 } from '@material-ui/core';
 import { red, grey } from '@material-ui/core/colors';
 
@@ -17,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         color: theme.palette.common.white,
         top: 'auto',
         bottom: 0,
-        position: 'fixed'
+        position: 'inherit'
     },
     content: {
         justifyContent: 'center'
@@ -26,27 +24,25 @@ const useStyles = makeStyles(theme => ({
 
 const Footer = () => {
     const styles = useStyles();
-    const scrollTrigger = useScrollTrigger();
-{/*<Slide direction='up' in={scrollTrigger} id='footer-slide'> */}
- {/* </Slide> */}
+
     return (
-         
-            <AppBar
-                position='absolute'
-                className={styles.footer}
-                id='footer-component'
-            >
-                <Toolbar className={styles.content}>
-                    <Typography
-                        variant='body1'
-                        id='footer-text'
-                        data-testid='footer-text'
-                    >
-                        | Founder Acharya: A.C. Bhaktivedanta Swami Prabhupada |
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-       
+
+        <AppBar
+            position='absolute'
+            className={styles.footer}
+            id='footer-component'
+        >
+            <Toolbar className={styles.content}>
+                <Typography
+                    variant='body1'
+                    id='footer-text'
+                    data-testid='footer-text'
+                >
+                    | Founder Acharya: A.C. Bhaktivedanta Swami Prabhupada |
+                </Typography>
+            </Toolbar>
+        </AppBar>
+
     );
 };
 
