@@ -16,7 +16,8 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: grey[900],
         color: theme.palette.common.white,
         top: 'auto',
-        bottom: 0
+        bottom: 0,
+        position: 'fixed'
     },
     content: {
         justifyContent: 'center'
@@ -26,9 +27,10 @@ const useStyles = makeStyles(theme => ({
 const Footer = () => {
     const styles = useStyles();
     const scrollTrigger = useScrollTrigger();
-
+{/*<Slide direction='up' in={scrollTrigger} id='footer-slide'> */}
+ {/* </Slide> */}
     return (
-        <Slide direction='up' in={scrollTrigger} id='footer-slide'>
+         
             <AppBar
                 position='absolute'
                 className={styles.footer}
@@ -44,7 +46,7 @@ const Footer = () => {
                     </Typography>
                 </Toolbar>
             </AppBar>
-        </Slide>
+       
     );
 };
 
