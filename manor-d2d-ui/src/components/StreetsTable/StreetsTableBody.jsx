@@ -5,9 +5,7 @@ import {
     TableRow,
     TableCell
 } from '@material-ui/core';
-import {
-    format, parseJSON
-} from 'date-fns';
+import { format, parseJSON, isValid } from 'date-fns';
 
 const descendingComparator = (a, b, orderBy) => {
     if (b[orderBy] < a[orderBy]) {
@@ -37,7 +35,7 @@ const stableSort = (array, comparator) => {
 
 const formatDate = date => format(parseJSON(date), 'MMM-yyyy');
 
-const StreetsTableBody = ({ styles, order, orderBy, rowsPerPage, streets, page, emptyRows }) => {
+const StreetsTableBody = ({ styles, order, orderBy, rowsPerPage, streets, page }) => {
 
     return (
         <TableBody>
@@ -50,12 +48,7 @@ const StreetsTableBody = ({ styles, order, orderBy, rowsPerPage, streets, page, 
                     >
                         <TableCell>{row.postcode}</TableCell>
                         <TableCell>{row.streetName}</TableCell>
-                        {/* <TableCell>{formatDate(row.date)}</TableCell> */}
-                        {emptyRows > 0 && (
-                            <TableRow style={{ height: 53 * emptyRows }}>
-                                <TableCell colSpan={6} />
-                            </TableRow>
-                        )}
+                        <TableCell>{formatDate(row.lastVisited)}</TableCell>
                     </TableRow>
                 ))
             }
@@ -73,6 +66,5 @@ StreetsTableBody.propTypes = {
     orderBy: PropTypes.string.isRequired,
     rowsPerPage: PropTypes.number.isRequired,
     streets: PropTypes.instanceOf(Object).isRequired,
-    page: PropTypes.number.isRequired,
-    emptyRows: PropTypes.number.isRequired
+    page: PropTypes.number.isRequired
 }

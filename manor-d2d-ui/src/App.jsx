@@ -53,7 +53,9 @@ const routes = [
 
 const App = ({getStreets}) => {
 
-    useEffect(() => getStreets());
+    useEffect(() => {
+        getStreets();
+    }, [getStreets]);
 
     return (
         <Switch>

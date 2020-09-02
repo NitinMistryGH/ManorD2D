@@ -38,8 +38,6 @@ const StreetsTable = ({ streets }) => {
         setPage(0);
     };
 
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, streets.length - page * rowsPerPage);
-
     return (
         <Paper>
             <TableContainer>
@@ -57,7 +55,6 @@ const StreetsTable = ({ streets }) => {
                         order={order}
                         orderBy={orderBy}
                         rowsPerPage={rowsPerPage}
-                        emptyRows={emptyRows}
                     />
                 </Table>
             </TableContainer>

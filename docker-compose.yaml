@@ -4,6 +4,12 @@ services:
         image: mongo:latest
         ports:
             - {target: 27017, published: 27017, protocol: tcp}
+    mongo-seeding:
+        build:
+            context: ./mongo-seeding/
+            dockerfile: Dockerfile
+        depends_on:
+            - mongodb
     d2d-server:
         build:
             context: ./manor-d2d-api/
@@ -11,4 +17,12 @@ services:
         ports:
             - {target: 5000, published: 5000, protocol: tcp}
         depends_on:
-            - mongodb
+            - mongo-seeding
+    d2d-ui:
+        build:
+            context: ./manor-d2d-ui/
+            dockerfile: Dockerfile
+        ports:
+            - {target: 3000, published: 3000, protocol: tcp}
+        depends_on:
+            - d2d-server
