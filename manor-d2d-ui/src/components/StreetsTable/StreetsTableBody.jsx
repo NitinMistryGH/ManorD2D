@@ -5,7 +5,7 @@ import {
     TableRow,
     TableCell
 } from '@material-ui/core';
-import { format, parseJSON, isValid } from 'date-fns';
+import { format, parseJSON } from 'date-fns';
 
 const descendingComparator = (a, b, orderBy) => {
     if (b[orderBy] < a[orderBy]) {
@@ -43,12 +43,12 @@ const StreetsTableBody = ({ styles, order, orderBy, rowsPerPage, streets, page }
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => (
                     <TableRow
-                        hover
                         key={`street-${index}`}
+                        className={styles.rows}
                     >
-                        <TableCell>{row.postcode}</TableCell>
-                        <TableCell>{row.streetName}</TableCell>
-                        <TableCell>{formatDate(row.lastVisited)}</TableCell>
+                        <TableCell className={styles.rowText}>{row.postcode}</TableCell>
+                        <TableCell className={styles.rowText}>{row.streetName}</TableCell>
+                        <TableCell className={styles.rowText}>{formatDate(row.lastVisited)}</TableCell>
                     </TableRow>
                 ))
             }

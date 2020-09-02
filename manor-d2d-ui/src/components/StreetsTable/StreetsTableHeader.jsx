@@ -16,12 +16,12 @@ const StreetsTableHeader = ({ styles, order, orderBy, onRequestSort }) => {
 
     const headers = [
         { id: 'postcode', numeric: false, disablePadding: false, label: 'Postcode' },
-        { id: 'street', numeric: false, disablePadding: false, label: 'Street Name' },
-        { id: 'date', numeric: false, disablePadding: false, label: 'Date Visited' }
+        { id: 'streetName', numeric: false, disablePadding: false, label: 'Street Name' },
+        { id: 'lastVisited', numeric: false, disablePadding: false, label: 'Date Visited' }
     ];
 
     return (
-        <TableHead>
+        <TableHead className={styles.header}>
             <TableRow>
                 {headers.map(headerCell => (
                     <TableCell
@@ -29,6 +29,7 @@ const StreetsTableHeader = ({ styles, order, orderBy, onRequestSort }) => {
                         align={headerCell.numeric ? 'right' : 'left'}
                         padding={headerCell.disablePadding ? 'none' : 'default'}
                         sortDirection={orderBy === headerCell.id ? order : false}
+                        className={styles.headerText}
                     >
                         <TableSortLabel
                             active={orderBy === headerCell.id}

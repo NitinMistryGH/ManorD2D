@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TableContainer, Table, Paper, TablePagination } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { blue, grey } from '@material-ui/core/colors';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -13,7 +14,25 @@ const mapStateToProps = state => ({
 })
 
 const useStyles = makeStyles(theme => ({
+    rows: {
+        '&:nth-of-type(odd)': {
+            backgroundColor: theme.palette.action.hover,
+        },
+    },
+    header: {
+        backgroundColor: blue[50],
 
+    },
+    rowText: {
+        color: grey[700],
+        fontWeight: 500,
+        fontSize: "0.938rem"
+    },
+    headerText: {
+        color: grey[700],
+        fontWeight: 'bold',
+        fontSize: '0.938rem',
+    },
 }))
 
 const StreetsTable = ({ streets }) => {

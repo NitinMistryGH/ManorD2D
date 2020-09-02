@@ -8,8 +8,8 @@ import { Route } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
     container: {
         backgroundColor: theme.palette.common.white,
-        marginTop: '8%',
-        padding: '3.5% 1.5% 3%',
+        marginTop: '6%',
+        padding: '3% 1.5%',
         border: `1px solid ${grey[300]}`,
         marginBottom: '8%'
     }
