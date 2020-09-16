@@ -60,7 +60,7 @@ const StreetsTable = ({ streets }) => {
     return (
         <Paper>
             <TableContainer>
-                <Table>
+                <Table id="streets-table">
                     <StreetsTableHeader
                         styles={styles}
                         order={order}

@@ -1,0 +1,1 @@
+export const streetsDatabase = "#streets-table"
