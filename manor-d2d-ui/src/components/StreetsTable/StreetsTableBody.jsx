@@ -5,7 +5,6 @@ import {
     TableRow,
     TableCell
 } from '@material-ui/core';
-import { format, parseJSON } from 'date-fns';
 
 const descendingComparator = (a, b, orderBy) => {
     if (b[orderBy] < a[orderBy]) {
@@ -33,8 +32,6 @@ const stableSort = (array, comparator) => {
     return stabilisedThis.map((el) => el[0]);
 }
 
-const formatDate = date => format(parseJSON(date), 'MMM-yyyy');
-
 const StreetsTableBody = ({ styles, order, orderBy, rowsPerPage, streets, page }) => {
 
     return (
@@ -48,7 +45,7 @@ const StreetsTableBody = ({ styles, order, orderBy, rowsPerPage, streets, page }
                     >
                         <TableCell className={styles.rowText}>{row.postcode}</TableCell>
                         <TableCell className={styles.rowText}>{row.streetName}</TableCell>
-                        <TableCell className={styles.rowText}>{formatDate(row.lastVisited)}</TableCell>
+                        <TableCell className={styles.rowText}>{row.lastVisited}</TableCell>
                     </TableRow>
                 ))
             }
