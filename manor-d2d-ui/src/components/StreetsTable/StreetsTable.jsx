@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
-import { TableContainer, Table, Paper, TablePagination } from '@material-ui/core';
+import {
+    TableContainer,
+    Table,
+    Paper,
+    TablePagination
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { blue, grey } from '@material-ui/core/colors';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { format, parseJSON } from 'date-fns';
+import search from '../SearchBar/Search';
 
 import StreetsTableBody from './StreetsTableBody';
 import StreetsTableHeader from './StreetsTableHeader';
+import SearchBar from '../SearchBar/SearchBar';
 
 
 const mapStateToProps = state => ({
-    streets: state.streets.data
+    streets: state.streets.data.map(item => ({
+        ...item,
+        lastVisited: format(parseJSON(item.lastVisited), 'MMM-yyyy')
+    }))
 })
 
 const useStyles = makeStyles(theme => ({
@@ -33,6 +44,9 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 'bold',
         fontSize: '0.938rem',
     },
+    searchBar: {
+
+    }
 }))
 
 const StreetsTable = ({ streets }) => {
@@ -41,7 +55,13 @@ const StreetsTable = ({ streets }) => {
     const [orderBy, setOrderBy] = useState('postcode');
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [searchTerm, setSearchTerm] = useState('');
 
+    const streetsFiltered = searchTerm === '' ? streets : search(streets, searchTerm);
+
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+    }
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
@@ -59,6 +79,9 @@ const StreetsTable = ({ streets }) => {
 
     return (
         <Paper>
+            <div>
+                <SearchBar handleSearch={handleSearch} />
+            </div>
             <TableContainer>
                 <Table>
                     <StreetsTableHeader
@@ -69,7 +92,7 @@ const StreetsTable = ({ streets }) => {
                     />
                     <StreetsTableBody
                         page={page}
-                        streets={streets}
+                        streets={streetsFiltered}
                         styles={styles}
                         order={order}
                         orderBy={orderBy}
@@ -80,7 +103,7 @@ const StreetsTable = ({ streets }) => {
             <TablePagination
                 rowsPerPageOptions={[10, 25, 50, 100]}
                 component="div"
-                count={streets.length}
+                count={streetsFiltered.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 onChangePage={handleChangePage}
