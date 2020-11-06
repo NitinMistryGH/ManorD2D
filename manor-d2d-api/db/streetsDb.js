@@ -8,6 +8,10 @@ const getAllStreets = () =>
     .lean()
     .exec();
 
+const createStreet = newStreet => 
+mongoose.model("streets", streetsSchema).create(newStreet)
+
 module.exports = {
-  getAllStreets
+  getAllStreets,
+  createStreet
 };
