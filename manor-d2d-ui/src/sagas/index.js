@@ -1,11 +1,12 @@
 import { put, takeLatest, call, all } from 'redux-saga/effects';
-import { GET_STREETS_API } from '../api-endpoints';
+import { GET_STREETS_API } from '../api/api-requests';
 import axios from 'axios';
 import { GET_STREETS_SUCCESS, GET_STREETS, GET_STREETS_ERROR } from '../actions/action-types';
 
 const apiRequest = (request) => axios.request({
     url: request.url,
-    method: request.method
+    method: request.method,
+    baseURL: request.baseURL
 })
 
 function* fetchStreets() {
