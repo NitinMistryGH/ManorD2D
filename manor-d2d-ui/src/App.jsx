@@ -12,6 +12,7 @@ import Banner from './components/Banner/Banner';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Home from './components/Home/Home';
 import Photo from './components/Photo/Photo';
+import PhotoCarousel from './components/PhotoCarousel/PhotoCarousel';
 import Video from './components/Video/Video';
 import BeAGiver from './components/BeAGiver/BeAGiver';
 import { getStreets } from './actions';
@@ -40,7 +41,7 @@ const routes = [
         title: 'Photos',
         link: '/photos',
         breadcrumb: 'Photos',
-        component: Photo
+        component: PhotoCarousel
     },
     {
         key: 'videos',
