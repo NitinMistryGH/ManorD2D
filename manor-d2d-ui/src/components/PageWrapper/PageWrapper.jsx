@@ -11,8 +11,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: '6%',
         padding: '3% 1.5%',
         border: `1px solid ${grey[300]}`,
-        marginBottom: '8%',
-        width: '75%'
+        marginBottom: '8%'
     }
 }));
 
