@@ -1,13 +1,16 @@
 const mongoose = require("mongoose");
-const streetsSchema = require("../schema/streetsSchema");
+const Street = require("../models/streetsModel");
 
 const getAllStreets = () =>
-  mongoose
-    .model("streets", streetsSchema)
+  Street
     .find({})
     .lean()
     .exec();
 
+const createStreet = newStreet =>
+  Street.create(newStreet);
+
 module.exports = {
-  getAllStreets
+  getAllStreets,
+  createStreet
 };

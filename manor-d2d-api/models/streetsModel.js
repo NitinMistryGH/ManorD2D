@@ -7,4 +7,4 @@ const streetsSchema = new Schema({
   lastVisited: { type: String, required: true }
 });
 
-module.exports = streetsSchema;
+module.exports = mongoose.model('streets', streetsSchema);
